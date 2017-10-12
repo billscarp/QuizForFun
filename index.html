@@ -121,8 +121,35 @@ const submitButton = document.getElementById('submit');
 
 function buildQuiz() {
 
-  
-}
+// HTML output
+
+const output = [];
+
+// question forEach loop to get current value, index and array parameters
+
+myQuestions.forEach((currentQuestion, questionNumber) => {
+
+    // list of answer choices
+    const answers = [];
+
+    // available answer
+    for (letter in currentQuestion.answers) {
+
+    
+      // add html radio button
+
+      answers.push(
+          `<label>
+            <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter} :
+            ${currentQuestion.answers[letter]}
+          </label>`
+        );
+      }
+
+
+
+
 
 
 
@@ -137,7 +164,9 @@ function showResults () {
 
 // display quiz
 
-buildQuiz();
+buildQuiz(); 
+
+
 
 
 // Submit listener to show results
@@ -159,10 +188,16 @@ const myQuestions = [
       a: "John F. Kennedy",
       b: "Arnold Schwarzenegger",
       c: "Al pacino"
-    },
+    };
     correctAnswer: "c"
-  },
-  {
+  }
+  ];
+  
+
+
+
+
+
   
 
 
@@ -171,18 +206,7 @@ const myQuestions = [
 
 
 
-
-
-
-
-]
-
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">
@@ -191,9 +215,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
   <p></a></p>
 </footer>
 
-<script>
 
-</script>
 
 </body>
 </html>
